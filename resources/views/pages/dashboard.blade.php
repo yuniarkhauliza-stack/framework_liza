@@ -13,6 +13,28 @@
                     <p class="text-sm text-blue-700 mt-2">Angkatan: {{ auth()->user()->angkatan }}</p>
                     <p class="text-sm text-blue-700">Kelas: {{ auth()->user()->kelas }}</p>
                 </div>
+                
+                <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-semibold text-slate-900">Kelola Berita</h3>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wider font-semibold text-blue-600">Query Builder</p>
+                        <p class="text-sm text-slate-600 mt-2">Buat, perbarui, dan hapus pengumuman serta berita himpunan HMIT UTS.</p>
+                    </div>
+                    <a href="{{ route('admin.berita.index') }}" class="mt-4 bg-blue-600 text-white text-center py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition">
+                        Kelola Berita
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-semibold text-slate-900">Kelola Pengurus</h3>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wider font-semibold text-emerald-600">Raw SQL</p>
+                        <p class="text-sm text-slate-600 mt-2">Atur daftar anggota pengurus aktif dan divisi/departemen HMIT UTS.</p>
+                    </div>
+                    <a href="{{ route('admin.pengurus.index') }}" class="mt-4 bg-emerald-600 text-white text-center py-2 rounded-md text-sm font-medium hover:bg-emerald-700 transition">
+                        Kelola Pengurus
+                    </a>
+                </div>
             </div>
         </div>
     </div>

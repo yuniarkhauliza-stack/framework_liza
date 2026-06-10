@@ -30,4 +30,45 @@
         </div>
     </div>
 </div>
+
+<div class="bg-slate-50 py-16 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Kabar Terbaru</h2>
+                <p class="mt-2 text-slate-500 max-w-xl">Informasi, agenda, dan berita kegiatan terupdate dari Himpunan Mahasiswa Informatika UTS.</p>
+            </div>
+            <a href="{{ route('berita.index') }}" class="mt-4 md:mt-0 inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
+                Lihat Semua Berita
+                <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+        @if($latestNews->isEmpty())
+            <div class="bg-white rounded-lg p-8 text-center border border-slate-200">
+                <p class="text-slate-500">Belum ada kabar terbaru.</p>
+            </div>
+        @else
+            <div class="grid gap-8 md:grid-cols-3">
+                @foreach($latestNews as $article)
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col h-full hover:shadow-md transition">
+                        <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2 block">{{ $article->category }}</span>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 line-clamp-2 hover:text-blue-600">
+                            <a href="{{ route('berita.show', $article->slug) }}">{{ $article->title }}</a>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3 flex-grow">{{ strip_tags($article->content) }}</p>
+                        <a href="{{ route('berita.show', $article->slug) }}" class="text-sm font-semibold text-blue-600 hover:text-blue-800 mt-auto inline-flex items-center">
+                            Baca Selengkapnya
+                            <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    </div>
+</div>
 @endsection

@@ -21,11 +21,9 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="{{ route('home') }}" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Home</a>
-                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">About Us</a>
-                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Program Kerja</a>
+                    <a href="{{ route('tentang-kami') }}" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Tentang Kami</a>
+                    <a href="{{ route('berita.index') }}" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Berita</a>
                     <a href="{{ route('aspirasi') }}" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Aspirasi</a>
-                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">FAQ</a>
-                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Contact</a>
                 </div>
                 <div class="flex items-center space-x-4">
                     @auth
